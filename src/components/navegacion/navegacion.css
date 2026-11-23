@@ -1,0 +1,100 @@
+
+/* =================================
+   ESCRITORIO: navegación superior
+================================= */
+
+.navigation {
+  position: static;
+  width: 100%;
+  margin-bottom: 25px;
+
+  background-color: var(--bg-canvas);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.navigation-list {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.navigation-item {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  padding: 15px 10px;
+  border: none;
+  background: transparent;
+
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.navigation-item i {
+  font-size: 21px;
+}
+
+.navigation-item span {
+  font-size: 12px;
+}
+
+.navigation-item:hover,
+.navigation-item.active {
+  color: var(--text-accent);
+}
+
+
+/* =================================
+   MÓVIL: navegación inferior fija
+================================= */
+
+@media screen and (max-width: 767px) {
+
+  .navigation {
+    position: fixed;
+
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    z-index: 1030;
+
+    width: 100%;
+    margin: 0;
+
+    background-color: var(--bg-canvas);
+    border-top: 1px solid var(--border-color);
+    border-bottom: none;
+
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .navigation-list {
+    justify-content: space-around;
+  }
+
+  .navigation-item {
+    padding: 12px 5px;
+    gap: 5px;
+  }
+
+  .navigation-item i {
+    font-size: 21px;
+  }
+
+  .navigation-item span {
+    font-size: 11px;
+  }
+
+  /* Evitar que la barra tape las noticias */
+  .app-container {
+    padding-bottom: 90px;
+  }
+}

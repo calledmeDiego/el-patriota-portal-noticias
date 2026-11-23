@@ -1,0 +1,84 @@
+
+/* =================================
+   PÁGINA DE NOTICIAS GUARDADAS
+================================= */
+
+.guardados-page {
+  min-height: 75vh;
+  background-color: var(--bg-canvas);
+  color: var(--text-body);
+}
+
+/* Encabezado editorial */
+.guardados-header {
+  border-bottom: 2px solid var(--text-headline);
+  padding-bottom: 0.65rem;
+  margin-bottom: 0.25rem;
+}
+
+.guardados-eyebrow {
+  margin-bottom: 0.35rem;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.guardados-title {
+  margin: 0;
+  color: var(--text-headline);
+  font-family: Georgia, serif;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+}
+
+/* Contenido */
+.guardados-contenido {
+  padding-top: 0.15rem;
+}
+
+.guardados-contador {
+  margin-bottom: 1.5rem;
+  color: var(--text-body);
+  font-size: 1rem;
+}
+
+/* Estado vacío */
+.guardados-vacio {
+  max-width: 650px;
+}
+
+.guardados-vacio p {
+  margin: 0;
+  color: var(--text-body);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+/* Listado */
+.guardados-lista {
+  padding-top: 0.5rem;
+}
+
+/* Adaptación móvil */
+@media (max-width: 575px) {
+  .guardados-page {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  .guardados-eyebrow {
+    font-size: 0.68rem;
+  }
+
+  .guardados-title {
+    font-size: 2.5rem;
+  }
+
+  .guardados-vacio p {
+    font-size: 0.95rem;
+  }
+}

@@ -1,0 +1,234 @@
+
+.nota-portada {
+  width: 100%;
+  color: var(--text-body);
+}
+
+.nota-portada__contenido {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.nota-portada__encabezado {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.55rem;
+}
+
+.nota-portada__fuente {
+  color: var(--text-accent);
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.nota-portada__titulo {
+  margin-bottom: 0.65rem;
+}
+
+.nota-portada__titulo h2,
+.nota-portada__titulo-button {
+  margin: 0;
+  padding: 0;
+  color: var(--text-headline);
+  font-family: Georgia, serif;
+  font-size: clamp(1.8rem, 6vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+}
+
+.nota-portada__titulo-button {
+  display: block;
+  width: 100%;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+
+.nota-portada__titulo-button:hover {
+  color: var(--text-accent);
+}
+
+.nota-portada__fecha {
+  display: block;
+  margin-bottom: 0.85rem;
+  color: var(--text-muted);
+  font-size: 0.65rem;
+}
+
+.nota-portada__figura {
+  width: 100%;
+  margin: 0 0 0.85rem;
+}
+
+.nota-portada__imagen {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.nota-portada__pie {
+  margin-top: 0.35rem;
+  color: var(--text-muted);
+  font-size: 0.58rem;
+  line-height: 1.4;
+}
+
+.nota-portada__descripcion {
+  margin: 0 0 0.85rem;
+  color: var(--text-body);
+  font-size: 0.85rem;
+  line-height: 1.55;
+}
+
+.nota-portada__acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.nota-portada__btn {
+  padding: 0.45rem 0.7rem;
+  border: 1px solid var(--border-color);
+  border-radius: 2px;
+  background-color: var(--bg-card);
+  color: var(--text-headline);
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nota-portada__btn:hover {
+  border-color: var(--text-accent);
+  background-color: var(--text-accent);
+  color: #FFFFFF;
+}
+
+
+.nota-portada--secundaria .nota-portada__verificacion {
+  padding: 0.4rem 0.5rem;
+  font-size: 0.58rem;
+}
+
+
+.nota-portada--secundaria .nota-portada__titulo-button {
+  font-size: clamp(2rem, 1.8vw, 1.9rem);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+}
+
+
+/* Pantallas medianas */
+@media (min-width: 768px) {
+  .nota-portada__titulo h2,
+  .nota-portada__titulo-button {
+    font-size: clamp(2.5rem, 4vw, 3.5rem);
+  }
+
+  .nota-portada__fecha {
+    margin-bottom: 1rem;
+  }
+
+  .nota-portada__descripcion {
+    font-size: 0.95rem;
+  }
+}
+
+/* Escritorio */
+@media (min-width: 1200px) {
+  .nota-portada--principal .nota-portada__imagen {
+    aspect-ratio: 16 / 8.5;
+  }
+
+  .nota-portada--principal .nota-portada__titulo h2,
+  .nota-portada--principal .nota-portada__titulo-button {
+    max-width: 1000px;
+    font-size: 3.4rem;
+  }
+}
+
+
+
+.nota-portada__acciones {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.55rem;
+  margin-top: 0.2rem;
+}
+
+.btn.nota-portada__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
+  padding: 0.45rem 0.8rem;
+  border: 1px solid var(--border-color);
+  border-radius: 3px;
+  background-color: transparent;
+  color: var(--text-headline);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn.nota-portada__btn--leer {
+  border-color: var(--text-headline);
+  background-color: var(--text-headline);
+  color: var(--bg-card);
+}
+
+.btn.nota-portada__btn--leer:hover {
+  border-color: var(--text-accent);
+  background-color: var(--text-accent);
+  color: #FFFFFF;
+}
+
+
+.nota-portada__visitar {
+  color: var(--text-headline);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.nota-portada__visitar:hover {
+  color: var(--text-accent);
+}
+
+
+.nota-portada__encabezado {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 0.55rem;
+}
+
+.nota-portada__verificacion {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.55rem 0.65rem;
+  border-radius: 5px;
+  background-color: color-mix(in srgb, var(--verified-color) 10%, transparent);
+  color: var(--verified-color);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease;
+}
+
+

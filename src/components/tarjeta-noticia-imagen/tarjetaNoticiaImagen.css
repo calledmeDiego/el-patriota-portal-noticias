@@ -1,0 +1,17 @@
+.news-image-card-img,
+.news-image-card-placeholder {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+}
+
+.news-image-card-placeholder {
+  flex-shrink: 0;
+}
+
+@media (max-width: 576px) {
+  .news-image-card-img,
+  .news-image-card-placeholder {
+    height: 180px;
+  }
+}

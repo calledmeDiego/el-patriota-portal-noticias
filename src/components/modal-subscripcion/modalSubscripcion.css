@@ -1,0 +1,478 @@
+
+/* =========================================
+   MODAL DE SUSCRIPCIÓN - EL PATRIOTA
+========================================= */
+
+.subscription-modal {
+  --modal-accent: var(--text-accent);
+  --modal-bg: var(--bg-card);
+  --modal-panel: var(--bg-subtle);
+  --modal-text: var(--text-headline);
+  --modal-muted: var(--text-muted);
+  --modal-border: var(--border-color);
+}
+
+/* Contenedor exterior */
+
+.subscription-modal .modal-dialog {
+  width: calc(100% - 40px);
+  max-width: 1180px;
+  margin: 12px auto;
+  min-height: calc(100% - 24px);
+  display: flex;
+  align-items: center;
+}
+
+.subscription-modal-content {
+  width: 100%;
+  max-height: calc(100dvh - 24px);
+  overflow: hidden;
+  border: 1px solid var(--modal-border);
+  border-radius: 18px;
+  background: var(--modal-bg);
+  color: var(--modal-text);
+  box-shadow: 0 18px 55px rgba(0, 0, 0, 0.16);
+}
+
+.subscription-modal .modal-header {
+  flex: 0 0 auto;
+  padding: 12px 18px 0;
+  background: var(--modal-bg);
+}
+
+.subscription-modal .btn-close {
+  opacity: 0.65;
+}
+
+.subscription-modal .btn-close:hover {
+  opacity: 1;
+}
+
+/* Cuerpo: sin scroll vertical */
+
+.subscription-modal-body {
+  min-height: 0;
+  overflow: hidden !important;
+  padding: 8px 20px 20px;
+  background: var(--modal-bg);
+}
+
+.subscription-panel {
+  height: 100%;
+  overflow: hidden;
+  border-radius: 15px;
+  background: var(--modal-panel);
+}
+
+.subscription-panel-body {
+  height: 100%;
+  padding: clamp(20px, 3.5vw, 48px);
+}
+
+.subscription-grid {
+  height: 100%;
+  --bs-gutter-x: clamp(18px, 3.5vw, 48px);
+}
+
+.subscription-main,
+.subscription-aside {
+  min-width: 0;
+}
+
+/* =========================================
+   COLUMNA PRINCIPAL
+========================================= */
+
+.subscription-main .badge {
+  background: var(--modal-accent) !important;
+  color: #fff;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 5px 9px;
+  letter-spacing: 0.15px;
+}
+
+.subscription-main h2 {
+  color: var(--modal-text);
+  font-family: Georgia, serif;
+  font-size: clamp(1.8rem, 3vw, 2.65rem);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -1px;
+  margin-bottom: 18px;
+}
+
+.subscription-main .lead {
+  color: var(--modal-muted);
+  font-size: 1rem;
+  line-height: 1.65;
+  max-width: 540px;
+  margin-bottom: 22px;
+}
+
+.subscription-main .form-label {
+  color: var(--modal-text);
+  font-size: 0.85rem;
+}
+
+.subscription-main .input-group {
+  flex-wrap: nowrap;
+}
+
+.subscription-main .form-control {
+  min-width: 0;
+  height: 48px;
+  background: var(--modal-bg);
+  color: var(--modal-text);
+  border: 1px solid var(--modal-border);
+  font-size: 0.95rem;
+  box-shadow: none;
+}
+
+.subscription-main .form-control:focus {
+  border-color: var(--modal-accent);
+  box-shadow: 0 0 0 3px color-mix(
+    in srgb,
+    var(--modal-accent) 12%,
+    transparent
+  );
+}
+
+.subscription-main .form-control::placeholder {
+  color: var(--modal-muted);
+}
+
+.subscription-main .btn-primary {
+  height: 48px;
+  padding-inline: 20px;
+  border: 1px solid var(--modal-accent);
+  background: var(--modal-accent);
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.subscription-main .btn-primary:hover {
+  filter: brightness(0.92);
+}
+
+.subscription-main .form-text {
+  color: var(--modal-muted);
+  font-size: 0.76rem;
+}
+
+.subscription-main .border-top {
+  border-color: var(--modal-border) !important;
+}
+
+.subscription-main .text-body-secondary {
+  color: var(--modal-muted) !important;
+}
+
+.subscription-main .btn-outline-primary {
+  border-color: var(--modal-accent);
+  color: var(--modal-accent);
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.subscription-main .btn-outline-primary:hover {
+  background: var(--modal-accent);
+  color: #fff;
+}
+
+/* =========================================
+   COLUMNA SECUNDARIA
+========================================= */
+
+.subscription-example {
+  background: var(--modal-bg);
+  border: 1px solid var(--modal-border) !important;
+  border-radius: 14px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.045);
+}
+
+.subscription-example .card-body {
+  padding: 22px;
+}
+
+.subscription-example h5 {
+  color: var(--modal-text);
+  font-family: Arial, sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.35;
+}
+
+.subscription-example p {
+  color: var(--modal-muted);
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.subscription-example .border {
+  border-color: var(--modal-border) !important;
+}
+
+.subscription-example .badge.text-bg-secondary {
+  background: #777f86 !important;
+  color: #fff;
+}
+
+.subscription-example .text-success {
+  color: var(--verified-color) !important;
+}
+
+.subscription-benefits {
+  padding: 0 4px;
+}
+
+.subscription-benefits h6 {
+  color: var(--modal-text);
+  font-size: 0.87rem;
+}
+
+.subscription-benefits p {
+  color: var(--modal-muted);
+  font-size: 0.78rem;
+}
+
+.subscription-benefits i {
+  color: var(--modal-accent) !important;
+}
+
+/* =========================================
+   992px - 1199px
+   Versión compacta de dos columnas
+========================================= */
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .subscription-modal .modal-dialog {
+    max-width: 1000px;
+  }
+
+  .subscription-modal-body {
+    padding: 6px 14px 14px;
+  }
+
+  .subscription-panel-body {
+    padding: 22px;
+  }
+
+  .subscription-grid {
+    --bs-gutter-x: 22px;
+  }
+
+  .subscription-main h2 {
+    font-size: 1.9rem;
+    margin-bottom: 12px;
+  }
+
+  .subscription-main .lead {
+    font-size: 0.88rem;
+    line-height: 1.45;
+    margin-bottom: 15px;
+  }
+
+  .subscription-main .form-control,
+  .subscription-main .btn-primary {
+    height: 43px;
+  }
+
+  .subscription-main .border-top {
+    margin-top: 16px !important;
+    padding-top: 12px !important;
+  }
+
+  .subscription-example .card-body {
+    padding: 15px;
+  }
+
+  .subscription-example h5 {
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+  }
+
+  .subscription-example p {
+    font-size: 0.76rem;
+    margin-bottom: 10px;
+  }
+
+  .subscription-example .border.rounded-3 {
+    padding: 10px !important;
+    margin-bottom: 9px !important;
+  }
+
+  .subscription-benefits {
+    margin-top: 16px !important;
+  }
+
+  .subscription-benefits > div {
+    margin-bottom: 10px !important;
+  }
+
+  .subscription-benefits i {
+    font-size: 1.25rem !important;
+  }
+}
+
+/* =========================================
+   576px - 991px
+   Solo contenido esencial
+========================================= */
+
+@media (min-width: 576px) and (max-width: 991.98px) {
+  .subscription-modal .modal-dialog {
+    width: calc(100% - 36px);
+    max-width: 680px;
+  }
+
+  .subscription-modal-body {
+    padding: 6px 12px 12px;
+  }
+
+  .subscription-panel-body {
+    padding: 30px;
+  }
+
+  .subscription-grid {
+    height: auto;
+  }
+
+  .subscription-aside {
+    display: none;
+  }
+
+  .subscription-main {
+    width: 100%;
+  }
+
+  .subscription-main h2 {
+    font-size: clamp(2rem, 5vw, 2.5rem);
+  }
+
+  .subscription-main .lead {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+  }
+
+  .subscription-main .border-top {
+    margin-top: 20px !important;
+  }
+}
+
+/* =========================================
+   MENOS DE 576px
+   Diseño móvil compacto
+========================================= */
+
+@media (max-width: 575.98px) {
+  .subscription-modal .modal-dialog {
+    width: calc(100% - 20px);
+    max-width: none;
+    min-height: calc(100% - 20px);
+    margin: 10px auto;
+  }
+
+  .subscription-modal-content {
+    max-height: calc(100dvh - 20px);
+    border-radius: 14px;
+  }
+
+  .subscription-modal .modal-header {
+    padding: 8px 12px 0;
+  }
+
+  .subscription-modal-body {
+    padding: 4px 8px 8px;
+  }
+
+  .subscription-panel {
+    border-radius: 10px;
+  }
+
+  .subscription-panel-body {
+    padding: 18px 16px;
+  }
+
+  .subscription-grid {
+    height: auto;
+  }
+
+  .subscription-aside {
+    display: none;
+  }
+
+  .subscription-main {
+    width: 100%;
+  }
+
+  .subscription-main .badge {
+    font-size: 0.6rem;
+    margin-bottom: 12px !important;
+  }
+
+  .subscription-main h2 {
+    font-size: clamp(1.65rem, 7vw, 2rem);
+    line-height: 1.12;
+    letter-spacing: -0.7px;
+    margin-bottom: 12px;
+  }
+
+  .subscription-main .lead {
+    font-size: 0.82rem;
+    line-height: 1.5;
+    margin-bottom: 17px;
+  }
+
+  .subscription-main .form-label {
+    font-size: 0.78rem;
+    margin-bottom: 6px;
+  }
+
+  .subscription-main .input-group {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .subscription-main .form-control {
+    flex: 1 1 100%;
+    width: 100%;
+    height: 43px;
+    border-radius: 7px !important;
+    font-size: 0.85rem;
+  }
+
+  .subscription-main .btn-primary {
+    width: 100%;
+    height: 43px;
+    border-radius: 7px !important;
+  }
+
+  .subscription-main .form-text {
+    font-size: 0.7rem;
+    margin-top: 8px;
+  }
+
+  .subscription-main .border-top {
+    margin-top: 18px !important;
+    padding-top: 14px !important;
+  }
+
+  .subscription-main .border-top p {
+    font-size: 0.78rem;
+  }
+
+  .subscription-main .btn-outline-primary {
+    width: 100%;
+    padding: 9px 10px;
+    font-size: 0.78rem;
+  }
+}
+
+/* Evitar que las animaciones alteren el centrado */
+
+@media (prefers-reduced-motion: reduce) {
+  .subscription-modal .modal-dialog {
+    transition: none !important;
+  }
+}

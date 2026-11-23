@@ -1,0 +1,115 @@
+:root {
+  --bg-canvas: #F9F8F5;
+  --bg-card: #FFFFFF;
+  --bg-subtle: #F0ECE4;
+
+  --text-headline: #181816;
+  --text-body: #474540;
+  --text-muted: #73716A;
+  --text-accent: #8A2624;
+
+  --verified-color: #385A48;
+  --border-color: #E2DFD6;
+}
+
+.app.theme-dark {
+  --bg-canvas: #121211;
+  --bg-card: #181816;
+  --bg-subtle: #1A1A18;
+
+  --text-headline: #FFFFFF;
+  --text-body: #B5B3AA;
+  --text-muted: #8A8880;
+  --text-accent: #E06D67;
+  --font-serif: Georgia, serif;
+  --font-sans: Arial, Helvetica, sans-serif;
+  --transition-fast: .2s ease;
+
+  --verified-color: #7EC99E;
+  --border-color: #2B2A27;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-canvas);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.app {
+  min-height: 100vh;
+  background-color: var(--bg-canvas);
+  color: var(--text-body);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.app-container {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+h2 {
+  margin: 0;
+  color: var(--text-headline);
+  font-family: Georgia, serif;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.btn {
+  --bs-btn-bg: unset;
+  background-color: unset;
+}
+.app .form-control {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  background-color: var(--bg-card);
+  color: var(--text-headline);
+  font-size: 13px;
+  box-shadow: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.app .form-control::placeholder {
+  color: var(--text-muted);
+  opacity: 1;
+}
+
+.app .form-control:focus {
+  background-color: var(--bg-card);
+  color: var(--text-headline);
+  border-color: var(--border-color);
+  box-shadow: none;
+  outline: none;
+}
+
+/* Texto seleccionado */
+.form-control::selection {
+  background-color: var(--text-accent);
+  color: #FFFFFF;
+}
+
+.input-group-text {
+  background-color: var(--bg-card) !important;
+  color: var(--text-muted) !important;
+  border-color: var(--border-color) !important;
+  transition: background-color 0.2s ease, color 0.2s ease,
+              border-color 0.2s ease;
+}
+
+@media (max-width: 576px) {
+  .app-container {
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 767px) {
+  .app-container {
+    padding-bottom: 90px;
+  }
+}

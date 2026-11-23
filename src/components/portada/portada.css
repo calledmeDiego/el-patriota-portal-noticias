@@ -1,0 +1,98 @@
+
+.portada {
+  width: 100%;
+  padding: 1.5rem;
+  color: var(--text-body);
+}
+
+.portada__header {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--text-headline);
+}
+
+.portada__titulo {
+  margin: 0;
+  color: var(--text-headline);
+  font-family: Georgia, serif;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.portada__contenido {
+  align-items: stretch;
+}
+
+.portada__lateral {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.portada__siguiente {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.portada__contraste {
+  margin-top: 1.5rem;
+  padding: 1.25rem;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-subtle);
+}
+
+
+/* Estructura editorial de la portada */
+@media (min-width: 992px) {
+
+  .portada__contenido {
+    align-items: stretch;
+  }
+
+  .portada__lateral {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 1rem;
+    align-self: stretch;
+    min-height: 100%;
+  }
+
+  .portada__siguiente,
+  .portada__contraste {
+    min-width: 0;
+    min-height: 0;
+    height: 100%;
+  }
+
+  .portada__siguiente {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .portada__contraste {
+    margin-top: 0;
+    display: flex;
+  }
+
+  .portada__contraste .contraste-medios {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+
+/* Móviles */
+@media (max-width: 575px) {
+  .portada {
+    padding: 1rem;
+  }
+
+  .portada__header {
+    margin-bottom: 1.25rem;
+  }
+
+  .portada__lateral {
+    margin-top: 0.5rem;
+  }
+}

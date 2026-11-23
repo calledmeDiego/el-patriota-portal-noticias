@@ -1,0 +1,303 @@
+
+/* =====================================
+   SEARCH PAGE - EL PATRIOTA
+===================================== */
+
+.search-page {
+  color: var(--text-body);
+}
+
+/* Encabezado de sección */
+
+.search-page .search-heading {
+  color: var(--text-headline);
+  font-family: Georgia, serif;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.search-page .search-description {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* =====================================
+   BUSCADOR
+===================================== */
+
+.search-box {
+  display: flex;
+  align-items: center;
+ 
+  border-radius: 8px;
+  overflow: hidden;
+  transition: border-color .2s ease;
+
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-card);
+  color: var(--text-muted);
+}
+
+.search-box:focus-within {
+  border-color: var(--text-accent);
+}
+
+
+.search-box .search-icon {
+  color: var(--text-muted);
+  padding-left: 16px;
+}
+
+.search-box .btn-search {
+  background: var(--text-accent);
+  color: white;
+  border: none;
+  padding: 12px 22px;
+  font-weight: 600;
+}
+
+.search-box .btn-search:hover {
+  opacity: .9;
+}
+
+/* =====================================
+   SECCIONES TEMÁTICAS
+===================================== */
+
+.search-page .section-label {
+  color: var(--text-headline);
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.category-pills {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.category-pills::-webkit-scrollbar {
+  display: none;
+}
+
+.category-pill {
+  flex-shrink: 0;
+  border: 1px solid var(--border-color);
+  border-radius: 30px;
+  background: var(--bg-card);
+  color: var(--text-body);
+  padding: 8px 17px;
+  font-size: .82rem;
+  font-weight: 500;
+  transition: all .2s ease;
+}
+
+.category-pill:hover {
+  border-color: var(--text-accent);
+  color: var(--text-accent);
+}
+
+.category-pill.active {
+  background: var(--text-accent);
+  color: #FFFFFF;
+  border-color: var(--text-accent);
+}
+
+/* =====================================
+   FILTROS
+===================================== */
+
+.search-filter-label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--text-muted);
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .7px;
+  text-transform: uppercase;
+}
+
+.search-page .form-select {
+  background-color: var(--bg-card);
+  color: var(--text-body);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 11px 35px 11px 13px;
+  box-shadow: none;
+}
+
+.search-page .form-select:focus {
+  border-color: var(--text-accent);
+  box-shadow: 0 0 0 2px rgba(138, 38, 36, .10);
+}
+
+/* =====================================
+   BÚSQUEDAS RECIENTES
+===================================== */
+
+.recent-search {
+  border: 1px solid var(--border-color);
+  background: var(--bg-subtle);
+  color: var(--text-body);
+  border-radius: 30px;
+  padding: 6px 13px;
+  font-size: .8rem;
+}
+
+.recent-search:hover {
+  border-color: var(--text-accent);
+  color: var(--text-accent);
+}
+
+/* =====================================
+   RESULTADOS
+===================================== */
+
+.results-heading {
+  color: var(--text-headline);
+  font-family: Georgia, serif;
+  font-weight: 700;
+}
+
+.results-count {
+  color: var(--text-muted);
+  font-size: .82rem;
+}
+
+.clear-filters {
+  color: var(--text-accent);
+  font-size: .82rem;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.clear-filters:hover {
+  text-decoration: underline;
+}
+
+/* =====================================
+   NEWS IMAGE CARD
+===================================== */
+
+.news-image-card {
+  height: 100%;
+  overflow: hidden;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 9px;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.news-image-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, .07);
+}
+
+.news-image-card-img,
+.news-image-card-placeholder {
+  width: 100%;
+  height: 205px;
+  object-fit: cover;
+}
+
+.news-image-card-placeholder {
+  background: var(--bg-subtle);
+  color: var(--text-muted);
+}
+
+.news-image-card .card-body {
+  padding: 20px;
+}
+
+.news-image-card .news-title {
+  color: var(--text-headline);
+  font-family: Georgia, serif;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.news-image-card .news-description {
+  color: var(--text-body);
+  font-size: .87rem;
+  line-height: 1.6;
+}
+
+.news-source {
+  background: var(--bg-subtle);
+  color: var(--text-headline);
+  border: 1px solid var(--border-color);
+}
+
+.news-verified {
+  background: var(--verified-color);
+  color: #FFFFFF;
+}
+
+/* =====================================
+   BOTONES
+===================================== */
+
+.search-page .btn-outline-secondary {
+  color: var(--text-body);
+  border-color: var(--border-color);
+}
+
+.search-page .btn-outline-secondary:hover {
+  color: var(--text-accent);
+  border-color: var(--text-accent);
+  background: var(--bg-subtle);
+}
+
+.search-page .btn-primary {
+  background: var(--text-accent);
+  border-color: var(--text-accent);
+  color: #FFFFFF;
+}
+
+.search-page .btn-primary:hover {
+  opacity: .9;
+}
+
+/* =====================================
+   SIN RESULTADOS
+===================================== */
+
+.empty-search {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 55px 20px;
+  text-align: center;
+}
+
+.empty-search h3 {
+  color: var(--text-headline);
+}
+
+.empty-search p {
+  color: var(--text-muted);
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media (max-width: 576px) {
+  .search-page {
+    padding-top: 20px !important;
+  }
+
+  .news-image-card-img,
+  .news-image-card-placeholder {
+    height: 180px;
+  }
+
+  .news-image-card .card-body {
+    padding: 16px;
+  }
+
+  .search-box .btn-search {
+    padding: 10px 15px;
+  }
+}

@@ -1,0 +1,165 @@
+
+/* FOOTER - EL PATRIOTA */
+
+.patriota-footer {
+  margin-top: 3rem;
+  padding: 2.5rem 2rem 0;
+  
+  background-color: #222220;
+  color: #f9f8f5;
+
+  border-top: 3px solid #8A2624;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* Marca */
+
+.footer-brand {
+  margin-bottom: 0.8rem;
+
+  color: #ffffff;
+  font-family: Georgia, serif;
+  font-size: 1.65rem;
+  font-weight: 700;
+  letter-spacing: -0.8px;
+}
+
+.footer-brand span {
+  color: #E06D67;
+}
+
+.footer-description {
+  max-width: 420px;
+  margin-bottom: 1rem;
+
+  color: #c1beb5;
+  font-size: 0.88rem;
+  line-height: 1.7;
+}
+
+.footer-trust {
+  display: inline-flex;
+  align-items: center;
+
+  color: #91c6a4;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+/* Información */
+
+.footer-heading {
+  margin-bottom: 1rem;
+
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-links a {
+  color: #c1beb5;
+  font-size: 0.85rem;
+  text-decoration: none;
+
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+  text-decoration-color: #E06D67;
+  text-underline-offset: 4px;
+}
+
+/* Pie inferior */
+
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  margin-top: 2.5rem;
+  padding: 1.2rem 0;
+
+  border-top: 1px solid #41403c;
+}
+
+.footer-bottom p {
+  margin: 0;
+
+  color: #99968e;
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
+/* MODO OSCURO */
+
+.app.theme-dark .patriota-footer {
+  background-color: var(--bg-card);
+  color: var(--text-headline);
+  border-top-color: var(--text-accent);
+}
+
+.app.theme-dark .footer-brand,
+.app.theme-dark .footer-heading {
+  color: var(--text-headline);
+}
+
+.app.theme-dark .footer-description,
+.app.theme-dark .footer-links a {
+  color: var(--text-body);
+}
+
+.app.theme-dark .footer-trust {
+  color: var(--verified-color);
+}
+
+.app.theme-dark .footer-links a:hover {
+  color: var(--text-headline);
+}
+
+.app.theme-dark .footer-bottom {
+  border-top-color: var(--border-color);
+}
+
+.app.theme-dark .footer-bottom p {
+  color: var(--text-muted);
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 767.98px) {
+  .patriota-footer {
+    padding: 2rem 1.2rem 0;
+  }
+
+  .footer-bottom {
+    margin-top: 2rem;
+    text-align: center;
+  }
+
+  .footer-links {
+    gap: 0.8rem 1.2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .patriota-footer,
+  .footer-links a {
+    transition: none;
+  }
+}

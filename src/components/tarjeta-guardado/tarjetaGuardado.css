@@ -1,0 +1,201 @@
+
+/* =====================================
+   TARJETA GUARDADO - BASE
+===================================== */
+
+.app .card.tarjeta-guardado {
+  --bs-card-bg: var(--bg-card);
+  --bs-card-color: var(--text-body);
+  --bs-card-border-color: var(--border-color);
+
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  background-color: var(--bg-card) !important;
+  color: var(--text-body) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 10px !important;
+
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.app .card.tarjeta-guardado:hover {
+  border-color: var(--text-accent) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* =====================================
+   CUERPO
+===================================== */
+
+.app .card.tarjeta-guardado .tarjeta-guardado__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+
+  background-color: var(--bg-card) !important;
+  color: var(--text-body) !important;
+}
+
+/* =====================================
+   FUENTE
+===================================== */
+
+.app .card.tarjeta-guardado .tarjeta-guardado__fuente {
+  color: var(--text-accent) !important;
+  letter-spacing: 0.07em;
+}
+
+/* =====================================
+   VERIFICACIÓN
+===================================== */
+
+.app .card.tarjeta-guardado .tarjeta-guardado__verificar {
+  background-color: var(--bg-subtle) !important;
+  color: var(--verified-color) !important;
+  border: 1px solid var(--border-color) !important;
+
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.app .card.tarjeta-guardado .tarjeta-guardado__verificar:hover {
+  background-color: var(--verified-color) !important;
+  color: #FFFFFF !important;
+  border-color: var(--verified-color) !important;
+}
+
+/* =====================================
+   TITULAR
+===================================== */
+
+.app .card.tarjeta-guardado .tarjeta-guardado__titulo {
+  color: var(--text-headline) !important;
+
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.2rem, 2vw, 1.55rem);
+  font-weight: 700;
+  line-height: 1.35;
+
+  margin-bottom: 0.8rem;
+}
+
+/* =====================================
+   FECHA
+===================================== */
+
+.app .card.tarjeta-guardado .tarjeta-guardado__fecha {
+  color: var(--text-muted) !important;
+}
+
+/* =====================================
+   DESCRIPCIÓN
+===================================== */
+
+.app .card.tarjeta-guardado .tarjeta-guardado__descripcion {
+  color: var(--text-body) !important;
+
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+/* =====================================
+   ACCIONES
+===================================== */
+
+.app .card.tarjeta-guardado .tarjeta-guardado__acciones {
+  display: flex;
+  align-items: center;
+
+  margin-top: auto !important;
+  padding-top: 1rem !important;
+
+  border-top: 1px solid var(--border-color);
+}
+
+/* Leer noticia */
+.app .card.tarjeta-guardado .tarjeta-guardado__leer {
+  --bs-btn-color: #FFFFFF;
+  --bs-btn-bg: var(--text-headline);
+  --bs-btn-border-color: var(--text-headline);
+  --bs-btn-hover-color: #FFFFFF;
+  --bs-btn-hover-bg: var(--text-accent);
+  --bs-btn-hover-border-color: var(--text-accent);
+color: var(--bg-card);
+
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+/* Guardado */
+.app .card.tarjeta-guardado .tarjeta-guardado__quitar {
+  --bs-btn-color: var(--text-accent);
+  --bs-btn-border-color: var(--text-accent);
+  --bs-btn-hover-color: #FFFFFF;
+  --bs-btn-hover-bg: var(--text-accent);
+  --bs-btn-hover-border-color: var(--text-accent);
+
+  background-color: transparent !important;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+/* Enlace */
+.app .card.tarjeta-guardado .tarjeta-guardado__enlace {
+  color: var(--text-accent) !important;
+  font-size: 0.85rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.app .card.tarjeta-guardado .tarjeta-guardado__enlace:hover {
+  text-decoration: underline;
+}
+
+/* =====================================
+   TEMA OSCURO
+===================================== */
+
+.app.theme-dark .card.tarjeta-guardado {
+  --bs-card-bg: #181816;
+  --bs-card-color: #B5B3AA;
+  --bs-card-border-color: #2B2A27;
+
+  background-color: var(--bg-card) !important;
+  color: var(--text-body) !important;
+  border-color: var(--border-color) !important;
+}
+
+.app.theme-dark .card.tarjeta-guardado .tarjeta-guardado__body {
+  background-color: var(--bg-card) !important;
+  color: var(--text-body) !important;
+}
+
+/* =====================================
+   RESPONSIVE - MOBILE FIRST
+===================================== */
+
+@media (max-width: 576px) {
+  .app .card.tarjeta-guardado .tarjeta-guardado__acciones {
+    align-items: stretch !important;
+  }
+
+  .app .card.tarjeta-guardado .tarjeta-guardado__leer,
+  .app .card.tarjeta-guardado .tarjeta-guardado__quitar {
+    flex: 1;
+  }
+
+  .app .card.tarjeta-guardado .tarjeta-guardado__enlace {
+    width: 100%;
+    margin-left: 0 !important;
+    padding-top: 0.5rem;
+  }
+}

@@ -1,0 +1,296 @@
+
+.contraste-medios {
+  width: 100%;
+  padding: 1.25rem;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-subtle);
+}
+
+.contraste-medios__header {
+  margin-bottom: 1.5rem;
+}
+
+.contraste-medios__etiqueta {
+  margin: 0 0 0.45rem;
+  color: var(--text-accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.contraste-medios__titulo {
+  margin: 0;
+  color: var(--text-headline);
+  font-family: Georgia, serif;
+  font-size: 1.7rem;
+  font-weight: 400;
+  line-height: 1.12;
+}
+
+.contraste-medios__lista {
+  margin-bottom: 1.15rem;
+}
+
+.contraste-medios__medio {
+  min-width: 0;
+  padding-right: 1rem;
+}
+
+.contraste-medios__medio + .contraste-medios__medio {
+  padding-right: 0;
+  padding-left: 1rem;
+  border-left: 1px solid var(--border-color);
+}
+
+.contraste-medios__nombre {
+  margin: 0 0 0.55rem;
+  color: var(--text-accent);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.contraste-medios__enfoque {
+  margin: 0;
+  color: var(--text-body);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.contraste-medios__boton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  background-color: transparent;
+  color: var(--text-headline);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.9rem;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.contraste-medios__boton:hover {
+  border-color: var(--text-accent);
+  color: var(--text-accent);
+}
+
+.contraste-medios__boton:focus-visible {
+  outline: 2px solid var(--text-accent);
+  outline-offset: 3px;
+}
+
+/* Pantallas pequeñas */
+@media (max-width: 575px) {
+  .contraste-medios {
+    padding: 1rem;
+  }
+
+  .contraste-medios__titulo {
+    font-size: 1.45rem;
+  }
+
+  .contraste-medios__enfoque {
+    font-size: 0.82rem;
+  }
+
+  .contraste-medios__boton {
+    width: 100%;
+    font-size: 0.82rem;
+  }
+}
+
+
+
+/* =====================================
+   MODAL CONTRASTE - BASE
+===================================== */
+
+.modal.modal-contraste {
+  position: fixed;
+  inset: 0;
+  z-index: 1055;
+  overflow-x: hidden;
+  overflow-y: auto;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Dimensiones y centrado */
+.modal.modal-contraste .modal-dialog {
+  max-width: 800px !important;
+  width: calc(100% - 2rem) !important;
+  margin: 1rem auto !important;
+}
+
+/* Contenedor principal */
+.modal.modal-contraste
+.modal-dialog
+.modal-content.modal-contraste__contenido {
+  background-color: var(--bg-card) !important;
+  color: var(--text-body) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 10px !important;
+  height: auto !important;
+  max-height: none !important;
+  overflow: hidden !important;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+}
+
+/* Cabecera */
+.modal.modal-contraste .modal-contraste__header {
+  background-color: var(--bg-card) !important;
+  color: var(--text-body) !important;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--border-color) !important;
+}
+
+.modal.modal-contraste .modal-contraste__etiqueta {
+  color: var(--text-accent) !important;
+  letter-spacing: 0.09em;
+  margin: 0;
+}
+
+.modal.modal-contraste .modal-contraste__cerrar {
+  flex-shrink: 0;
+  opacity: 0.8;
+}
+
+/* Cuerpo */
+.modal.modal-contraste .modal-contraste__body {
+  background-color: var(--bg-card) !important;
+  color: var(--text-body) !important;
+  padding: 1.25rem;
+  overflow: visible !important;
+  max-height: none;
+}
+
+/* Titular */
+.modal.modal-contraste .modal-contraste__titulo {
+  color: var(--text-headline) !important;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.9rem, 5vw, 3.2rem);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+  margin-bottom: 1.5rem;
+}
+
+/* Comparación de medios */
+.modal.modal-contraste .modal-contraste__medios {
+  margin-bottom: 1rem;
+}
+
+.modal.modal-contraste .modal-contraste__medio {
+  padding: 0 1rem;
+}
+
+.modal.modal-contraste .modal-contraste__medio:first-child {
+  padding-left: 0;
+  border-right: 1px solid var(--border-color);
+}
+
+.modal.modal-contraste .modal-contraste__medio:last-child {
+  padding-right: 0;
+}
+
+.modal.modal-contraste .modal-contraste__nombre {
+  color: var(--text-accent) !important;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.5rem;
+}
+
+.modal.modal-contraste .modal-contraste__enfoque {
+  color: var(--text-body) !important;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+/* Puntos en común */
+.modal.modal-contraste .modal-contraste__comunes {
+  margin-top: 1rem;
+}
+
+.modal.modal-contraste .modal-contraste__subtitulo {
+  color: var(--text-headline) !important;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 400;
+  margin-bottom: 0.4rem;
+}
+
+.modal.modal-contraste .modal-contraste__lista {
+  color: var(--text-body) !important;
+  padding-left: 1.4rem;
+  line-height: 1.8;
+  margin-bottom: 0;
+}
+
+/* Descripción */
+.modal.modal-contraste .modal-contraste__descripcion {
+  color: var(--text-muted) !important;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-top: 1.5rem;
+}
+
+/* Botón cerrar en tema oscuro */
+.app.theme-dark .modal.modal-contraste .modal-contraste__cerrar {
+  filter: invert(1);
+}
+
+/* Fondo oscuro detrás del modal */
+.modal-backdrop.show {
+  opacity: 0.55;
+}
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media (max-width: 575.98px) {
+  .modal.modal-contraste .modal-dialog {
+    width: calc(100% - 1rem) !important;
+    margin: 0.5rem auto !important;
+  }
+
+  .modal.modal-contraste .modal-contraste__header {
+    padding: 0.9rem 1rem;
+  }
+
+  .modal.modal-contraste .modal-contraste__body {
+    padding: 1rem;
+  }
+
+  .modal.modal-contraste .modal-contraste__medio {
+    padding: 0 !important;
+    border-right: 0 !important;
+  }
+
+  .modal.modal-contraste .modal-contraste__medio:first-child {
+    padding-bottom: 1rem !important;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .modal.modal-contraste .modal-contraste__medio:last-child {
+    padding-top: 1rem !important;
+  }
+}
+
+@media (min-width: 576px) {
+  .modal.modal-contraste .modal-contraste__body {
+    padding: 1.5rem;
+  }
+
+  .modal.modal-contraste .modal-contraste__header {
+    padding: 1.1rem 1.25rem;
+  }
+}
