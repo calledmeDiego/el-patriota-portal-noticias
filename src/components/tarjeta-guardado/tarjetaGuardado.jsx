@@ -69,7 +69,7 @@ function TarjetaGuardado({
           <button
             type="button"
             className="btn btn-dark tarjeta-guardado__leer"
-            onClick={onLeer}
+            onClick={() => onLeer?.(noticia)}
           >
             Leer noticia
             <i className="bi bi-arrow-right ms-2"></i>

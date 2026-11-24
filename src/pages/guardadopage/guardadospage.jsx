@@ -1,16 +1,15 @@
 import TarjetaGuardado from "../../components/tarjeta-guardado/tarjetaGuardado";
 import useGuardados from "../../hooks/useGuardados";
-import "./guardadosPage.css";
+import ModalNoticia from "../../components/modal-noticia/modalNoticia";
+import "./guardadospage.css";
+import { useState } from "react";
 
 function GuardadosPage() {
-  // Reemplazar por el estado real de noticias guardadas.
-  const { noticiasGuardadas, quitarGuardado } = useGuardados();
+
+  const { noticiasGuardadas, alternarGuardado, estaGuardada } = useGuardados();
+  const [noticiaSeleccionada, setNoticiaSeleccionada] = useState(null);
   
   const total = noticiasGuardadas.length;
-
-  const leer = (noticia) => {};
-  const verificar = (noticia) => {};
-  const quitar = (noticia) => {};
 
   return (
     <main
@@ -43,15 +42,20 @@ function GuardadosPage() {
               <div className="col-12 col-md-6 col-xl-4" key={noticia.id}>
                 <TarjetaGuardado
                   noticia={noticia}
-                  onLeer={() => leer(noticia)}
-                  onVerificar={() => verificar(noticia)}
-                  onQuitar={() => quitar(noticia)}
+                  onLeer={setNoticiaSeleccionada}
+                  onVerificar={() => console.log('')}
+                  onQuitar={() => alternarGuardado(noticia)}
                 />
               </div>
             ))}
           </div>
         )}
       </section>
+      <ModalNoticia noticia={noticiaSeleccionada}
+        onCerrar={() => setNoticiaSeleccionada(null)}
+        onGuardar={alternarGuardado}
+        guardada={noticiaSeleccionada ? estaGuardada(noticiaSeleccionada) : false}
+      />
     </main>
   );
 }

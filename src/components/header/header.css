@@ -19,7 +19,7 @@
 .header-main {
   position: relative;
   min-height: 230px;
-  justify-content: center !important;
+  justify-content: center;
   align-items: center !important;
   padding: 2rem 1rem;
 }
@@ -94,12 +94,33 @@
   background-color: var(--bg-subtle);
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .header-edition {
     display: none;
   }
+  
 
-  .brand h1 {
+  .header-main {
+    min-height: 120px;
+    padding: 1rem;
+  }
+
+  .header-main .brand {
+    position: static;
+    transform: none;
+    width: auto;
+    flex: 1 1 auto;
+    min-width: 0;
+    max-width: calc(100% - 110px);
+    text-align: left;
+  }
+
+  .header-main .brand a {
+  font-size: clamp(1.6rem, 7vw, 2.6rem);
+  letter-spacing: 0.08em;   /* menos separación entre letras en móvil */
+}
+
+  .brand  {
     font-size: 1.35rem;
   }
 

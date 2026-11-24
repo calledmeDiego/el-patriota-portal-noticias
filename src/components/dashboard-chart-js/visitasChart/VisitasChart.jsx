@@ -8,6 +8,7 @@ import {
   Title,
   Tooltip,
   Legend,
+  Filler
 } from "chart.js";
 import { getChartOptions } from "../../../js/configurarCharts";
 
@@ -19,6 +20,7 @@ ChartJS.register(
   Title,
   Tooltip,
   Legend,
+  Filler
 );
 
 function VisitasChart() {

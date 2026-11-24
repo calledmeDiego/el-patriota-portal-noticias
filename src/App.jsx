@@ -25,7 +25,7 @@ function App() {
       <div className="app-container container">
         <Navegacion />
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/inicio" element={<HomePage />} />
           <Route path="/buscar" element={<SearchPage />} />
           <Route path="/guardados" element={<GuardadosPage />} />
           <Route path="/dashboard" element={<DashboardPage />} />

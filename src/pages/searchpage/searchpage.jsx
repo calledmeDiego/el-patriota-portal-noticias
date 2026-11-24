@@ -26,7 +26,7 @@ const timeOptions = [
   { value: "month", label: "Último mes" },
 ];
 
-function SearchPage({ onSave, onRead }) {
+function SearchPage() {
   const { estaGuardada, alternarGuardado } = useGuardados();
   const [noticiaSeleccionada, setNoticiaSeleccionada] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
@@ -57,29 +57,6 @@ function SearchPage({ onSave, onRead }) {
     setSearchQuery(query);
 
     // Guardar historial
-    const updatedSearches = [
-      query,
-      ...recentSearches.filter(
-        (item) => item.toLowerCase() !== query.toLowerCase(),
-      ),
-    ].slice(0, 5);
-
-    setRecentSearches(updatedSearches);
-
-    localStorage.setItem(
-      "patriota_recent_searches",
-      JSON.stringify(updatedSearches),
-    );
-  };
-
-  // Registra una búsqueda previa
-  const handleSearchMemory = (event) => {
-    event.preventDefault();
-
-    const query = searchTerm.trim();
-
-    if (!query) return;
-
     const updatedSearches = [
       query,
       ...recentSearches.filter(
@@ -312,6 +289,7 @@ function SearchPage({ onSave, onRead }) {
                   onGuardar={alternarGuardado}
                   onLectura={setNoticiaSeleccionada}
                   guardada={estaGuardada(news)}
+                  
                 />
               </div>
             ))}

@@ -9,6 +9,7 @@ function Destacados({
   onAnterior,
   onSiguiente,
   onGuardar,
+  onLectura,
   guardada = false
 }) {
   return (
@@ -58,6 +59,7 @@ function Destacados({
             onGuardar={onGuardar}
             guardada={guardada}
             principal
+            onLectura={onLectura}
           />
         )}
       </div>

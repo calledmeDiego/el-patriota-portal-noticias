@@ -5,6 +5,7 @@ import NotaPortada from "./notaPortada";
 import ContrasteMedios from "./contrasteMedios";
 import { newsData }  from "../../data/noticias";
 import "./portada.css";
+import ModalNoticia from "../../components/modal-noticia/modalNoticia";
 import useGuardados from "../../hooks/useGuardados";
 
 function Portada() {
@@ -30,7 +31,9 @@ function Portada() {
   };
 
   const { estaGuardada, alternarGuardado } = useGuardados();
+  const [noticiaSeleccionada, setNoticiaSeleccionada] = useState(null);
   const [indice, setIndice] = useState(0);
+  
 
   const ordenadas = useMemo(
     () => newsData
@@ -64,18 +67,20 @@ function Portada() {
             onSiguiente={() => mover(1)}
             onGuardar={alternarGuardado}
             guardada={principal ? estaGuardada(principal) : false}
+            onLectura={setNoticiaSeleccionada}
           />
         </section>
 
         <aside className="col-12 col-lg-4 portada__lateral">
           {siguiente && (
-            <section className="portada__siguiente">
+            <section className="portada__siguiente d-none d-lg-flex">
               <NotaPortada
                 noticia={siguiente}
                 secundaria
                 onGuardar={alternarGuardado}
                 guardada={estaGuardada(siguiente)}
                 onSeleccionar={() => mover(1)}
+                onLectura={setNoticiaSeleccionada}
               />
             </section>
           )}
@@ -85,6 +90,14 @@ function Portada() {
           </section>
         </aside>
       </div>
+       <ModalNoticia
+        noticia={noticiaSeleccionada}
+        onCerrar={() => setNoticiaSeleccionada(null)}
+        onGuardar={alternarGuardado}
+        guardada={
+          noticiaSeleccionada ? estaGuardada(noticiaSeleccionada) : false
+        }
+      />
     </main>
   );
 }

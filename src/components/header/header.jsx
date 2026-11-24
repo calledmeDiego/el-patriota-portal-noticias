@@ -11,9 +11,9 @@ function Header({ theme, cambiarTema }) {
         <span className="header-edition">Portal de noticias</span>
       </div>
 
-      <div className="d-flex justify-content-between align-items-center header-main">
-        <div className="brand">
-          <Link to="/" aria-label="El Patriota, inicio">
+      <div className="d-flex justify-content-between align-items-center header-main ">
+        <div className="brand text-start text-md-center">
+          <Link to="/inicio" aria-label="El Patriota, inicio">
             EL<span>·</span>PATRIOTA
             <small>Portal de actualidad y contraste</small>
           </Link>

@@ -5,6 +5,7 @@ function NotaPortada({
   principal = false,
   onSeleccionar,
   onGuardar,
+  onLectura,
   guardada = false,
 }) {
   const {
@@ -16,6 +17,9 @@ function NotaPortada({
     url,
     verificado,
   } = noticia;
+  const manejarLectura = () => {
+    onLectura?.(noticia);
+  };
 
   return (
     <article
@@ -27,15 +31,12 @@ function NotaPortada({
         <div className="nota-portada__encabezado">
           <span className="nota-portada__fuente">{fuente}</span>
 
-          <a
-            href={verificado}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="nota-portada__verificacion"
-          >
-            <i className="bi bi-patch-check-fill me-1"></i>
-            Ficha de verificación
-          </a>
+          {verificado && (
+            <span className="nota-portada__verificacion">
+              <i className="bi bi-patch-check-fill me-1"></i>
+              Verificado
+            </span>
+          )}
         </div>
 
         <div className="nota-portada__titulo">
@@ -80,17 +81,14 @@ function NotaPortada({
         )}
 
         <div className="nota-portada__acciones">
-          {url && (
-            <a
-              href={url}
-              target="_blank"
-              rel="noopener noreferrer"
+          
+            <button
+            type="button"
               className="btn btn-sm nota-portada__btn nota-portada__btn--leer"
+              onClick={manejarLectura}
             >
               Leer noticia
-              <i className="bi bi-arrow-up-right ms-2"></i>
-            </a>
-          )}
+            </button>
 
           <button
             type="button"

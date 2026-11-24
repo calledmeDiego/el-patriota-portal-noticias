@@ -1,10 +1,10 @@
 
 import TarjetaNoticia from "../../components/tarjeta_noticia/tarjetaNoticia";
-
+import ModalNoticia from "../../components/modal-noticia/modalNoticia";
 import { newsData } from "../../data/noticias";
 
 import useGuardados from "../../hooks/useGuardados";
-
+import { useState } from "react";
 import "./HomePage.css";
 import Portada from "../../components/portada/portada";
 
@@ -13,6 +13,7 @@ function HomePage() {
     estaGuardada,
     alternarGuardado
   } = useGuardados();
+  const [noticiaSeleccionada, setNoticiaSeleccionada] = useState(null);
 
   const noticiasRecientes = [...newsData]
   .sort(
@@ -34,10 +35,18 @@ function HomePage() {
           <span className="news-count">{noticiasRecientes.length} noticias</span>
         </div>
 
-        {noticiasRecientes.map((news) => (
-          <TarjetaNoticia key={news.id} news={news} guardada={estaGuardada(news)} onGuardar={alternarGuardado}/>
+        {noticiasRecientes.map((noticia) => (
+          <TarjetaNoticia key={noticia.id} noticia={noticia} guardada={estaGuardada(noticia)} onGuardar={alternarGuardado} onLectura={setNoticiaSeleccionada}/>
         ))}
       </section>
+      <ModalNoticia
+        noticia={noticiaSeleccionada}
+        onCerrar={() => setNoticiaSeleccionada(null)}
+        onGuardar={alternarGuardado}
+        guardada={
+          noticiaSeleccionada ? estaGuardada(noticiaSeleccionada) : false
+        }
+      />
     </main>
   );
 }
