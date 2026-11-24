@@ -5,7 +5,7 @@ import { newsData } from "../../data/noticias";
 
 import useGuardados from "../../hooks/useGuardados";
 import { useState } from "react";
-import "./HomePage.css";
+import "./homepage.css";
 import Portada from "../../components/portada/portada";
 import AvisoGuardado from "../../components/aviso-guardado/avisoGuardado";
 

@@ -1,7 +1,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { Modal } from 'bootstrap';
-import './ModalSubscripcion.css';
+import './modalSubscripcion.css';
 
 const SESSION_KEY = 'patriota_conversion_modal_shown';
 
