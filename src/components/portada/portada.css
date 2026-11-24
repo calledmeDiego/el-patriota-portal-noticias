@@ -24,30 +24,52 @@
   align-items: stretch;
 }
 
+.portada__principal,
 .portada__lateral {
   display: flex;
   flex-direction: column;
   min-width: 0;
 }
 
+.portada__lateral {
+  gap: 1.5rem;
+  flex-direction: column;
+  min-width: 0;
+}
+
 .portada__siguiente {
-  padding-bottom: 1rem;
+  flex: 0 0 auto;
+  min-height: 0;
+  overflow: hidden;
+  padding: 1.25rem;
   border-bottom: 1px solid var(--border-color);
 }
 
 .portada__contraste {
-  margin-top: 1.5rem;
+  display: flex;
+  min-height: 0;
   padding: 1.25rem;
   border: 1px solid var(--border-color);
   background-color: var(--bg-subtle);
 }
 
+.portada__contraste > .contraste-medios {
+  flex: 1;
+}
 
 /* Estructura editorial de la portada */
 @media (min-width: 992px) {
 
+  .portada__principal .destacados {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+  }
   .portada__contenido {
     align-items: stretch;
+  }
+  .portada__contenido > * {
+    min-height: 0;
   }
 
   .portada__lateral {

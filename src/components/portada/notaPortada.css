@@ -2,6 +2,7 @@
 .nota-portada {
   width: 100%;
   color: var(--text-body);
+  display: flex;
 }
 
 .nota-portada__contenido {
@@ -112,7 +113,7 @@
 }
 
 
-.nota-portada--secundaria .nota-portada__verificacion {
+.nota-portada--secundaria .not  a-portada__verificacion {
   padding: 0.4rem 0.5rem;
   font-size: 0.58rem;
 }
@@ -232,3 +233,17 @@
 }
 
 
+@media (min-width: 992px) {
+  .nota-portada--principal .nota-portada__figura {
+    position: relative;
+    flex: 1 1 auto;
+    min-height: 260px;
+  }
+
+  .nota-portada--principal .nota-portada__imagen {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    aspect-ratio: auto;
+  }
+}

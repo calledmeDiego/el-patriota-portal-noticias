@@ -54,8 +54,8 @@ function Portada() {
         <h1 className="portada__titulo">Portada</h1>
       </header>
 
-      <div className="row g-4 portada__contenido">
-        <section className="col-12 col-lg-8">
+      <div className="row gx-4 gy-4 gy-lg-0 portada__contenido">
+        <section className="col-12 col-lg-8 portada__principal">
           <Destacados
             noticia={principal}
             posicion={indice}
