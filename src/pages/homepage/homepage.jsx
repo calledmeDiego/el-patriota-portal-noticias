@@ -13,6 +13,13 @@ function HomePage() {
     estaGuardada,
     alternarGuardado
   } = useGuardados();
+
+  const noticiasRecientes = [...newsData]
+  .sort(
+    (a, b) =>
+      new Date(b.fechaPublicacion) - new Date(a.fechaPublicacion)
+  )
+  .slice(0, 3);
   return (
     <main className="homepage">
       <Portada />
@@ -24,10 +31,10 @@ function HomePage() {
             <h2>Últimas noticias</h2>
           </div>
 
-          <span className="news-count">{newsData.length} noticias</span>
+          <span className="news-count">{noticiasRecientes.length} noticias</span>
         </div>
 
-        {newsData.map((news) => (
+        {noticiasRecientes.map((news) => (
           <TarjetaNoticia key={news.id} news={news} guardada={estaGuardada(news)} onGuardar={alternarGuardado}/>
         ))}
       </section>

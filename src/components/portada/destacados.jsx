@@ -7,7 +7,9 @@ function Destacados({
   posicion,
   total,
   onAnterior,
-  onSiguiente
+  onSiguiente,
+  onGuardar,
+  guardada = false
 }) {
   return (
     <section
@@ -53,6 +55,8 @@ function Destacados({
         {noticia && (
           <NotaPortada
             noticia={noticia}
+            onGuardar={onGuardar}
+            guardada={guardada}
             principal
           />
         )}

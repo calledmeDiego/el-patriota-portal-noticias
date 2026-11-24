@@ -5,6 +5,7 @@ import NotaPortada from "./notaPortada";
 import ContrasteMedios from "./contrasteMedios";
 import { newsData }  from "../../data/noticias";
 import "./portada.css";
+import useGuardados from "../../hooks/useGuardados";
 
 function Portada() {
   
@@ -27,10 +28,10 @@ function Portada() {
 
     descripcion: "Comparación ilustrativa del proyecto académico.",
   };
-  
+
+  const { estaGuardada, alternarGuardado } = useGuardados();
   const [indice, setIndice] = useState(0);
 
-  // Más recientes primero (con la misma fecha respeta el orden del array)
   const ordenadas = useMemo(
     () => newsData
       .filter((noticia) => noticia.destacado === true)
@@ -61,6 +62,8 @@ function Portada() {
             total={total}
             onAnterior={() => mover(-1)}
             onSiguiente={() => mover(1)}
+            onGuardar={alternarGuardado}
+            guardada={principal ? estaGuardada(principal) : false}
           />
         </section>
 
@@ -70,6 +73,8 @@ function Portada() {
               <NotaPortada
                 noticia={siguiente}
                 secundaria
+                onGuardar={alternarGuardado}
+                guardada={estaGuardada(siguiente)}
                 onSeleccionar={() => mover(1)}
               />
             </section>
