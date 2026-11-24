@@ -1,12 +1,13 @@
 import TarjetaGuardado from "../../components/tarjeta-guardado/tarjetaGuardado";
 import useGuardados from "../../hooks/useGuardados";
 import ModalNoticia from "../../components/modal-noticia/modalNoticia";
+import AvisoGuardado from "../../components/aviso-guardado/avisoGuardado"; 
 import "./guardadospage.css";
 import { useState } from "react";
 
 function GuardadosPage() {
 
-  const { noticiasGuardadas, alternarGuardado, estaGuardada } = useGuardados();
+  const { noticiasGuardadas, alternarGuardado, estaGuardada, aviso } = useGuardados();
   const [noticiaSeleccionada, setNoticiaSeleccionada] = useState(null);
   
   const total = noticiasGuardadas.length;
@@ -56,6 +57,7 @@ function GuardadosPage() {
         onGuardar={alternarGuardado}
         guardada={noticiaSeleccionada ? estaGuardada(noticiaSeleccionada) : false}
       />
+      <AvisoGuardado mostrar={aviso.mostrar} mensaje={aviso.mensaje} />
     </main>
   );
 }

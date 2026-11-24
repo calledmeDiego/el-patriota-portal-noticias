@@ -5,6 +5,7 @@ import TarjetaNoticiaImagen from "../../components/tarjeta-noticia-imagen/tarjet
 import "./searchpage.css";
 import useGuardados from "../../hooks/useGuardados";
 import ModalNoticia from "../../components/modal-noticia/modalNoticia";
+import AvisoGuardado from "../../components/aviso-guardado/avisoGuardado";
 
 const categories = [
   "Portada",
@@ -27,7 +28,7 @@ const timeOptions = [
 ];
 
 function SearchPage() {
-  const { estaGuardada, alternarGuardado } = useGuardados();
+  const { estaGuardada, alternarGuardado, aviso } = useGuardados();
   const [noticiaSeleccionada, setNoticiaSeleccionada] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
@@ -289,7 +290,6 @@ function SearchPage() {
                   onGuardar={alternarGuardado}
                   onLectura={setNoticiaSeleccionada}
                   guardada={estaGuardada(news)}
-                  
                 />
               </div>
             ))}
@@ -327,6 +327,7 @@ function SearchPage() {
           noticiaSeleccionada ? estaGuardada(noticiaSeleccionada) : false
         }
       />
+      <AvisoGuardado mostrar={aviso.mostrar} mensaje={aviso.mensaje} />
     </main>
   );
 }

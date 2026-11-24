@@ -7,8 +7,7 @@ const SESSION_KEY = 'patriota_conversion_modal_shown';
 
 function ModalSubscripcion({
   theme = 'light',
-  onSubscribe,
-  onCreateAccount
+  onSubscribe
 }) {
   const modalRef = useRef(null);
   const modalInstanceRef = useRef(null);

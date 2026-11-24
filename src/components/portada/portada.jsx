@@ -3,13 +3,13 @@ import { useMemo, useState } from "react";
 import Destacados from "./destacados";
 import NotaPortada from "./notaPortada";
 import ContrasteMedios from "./contrasteMedios";
-import { newsData }  from "../../data/noticias";
+import { newsData } from "../../data/noticias";
 import "./portada.css";
 import ModalNoticia from "../../components/modal-noticia/modalNoticia";
 import useGuardados from "../../hooks/useGuardados";
+import AvisoGuardado from "../aviso-guardado/avisoGuardado";
 
 function Portada() {
-  
   const contrasteTransporte = {
     titulo: "Debate sobre el transporte urbano en Lima",
     medios: [
@@ -30,17 +30,15 @@ function Portada() {
     descripcion: "Comparación ilustrativa del proyecto académico.",
   };
 
-  const { estaGuardada, alternarGuardado } = useGuardados();
+  const { estaGuardada, alternarGuardado, aviso } = useGuardados();
   const [noticiaSeleccionada, setNoticiaSeleccionada] = useState(null);
   const [indice, setIndice] = useState(0);
-  
 
   const ordenadas = useMemo(
-    () => newsData
-      .filter((noticia) => noticia.destacado === true)
-      .sort((a, b) =>
-        b.fechaPublicacion.localeCompare(a.fechaPublicacion)
-      ),
+    () =>
+      newsData
+        .filter((noticia) => noticia.destacado === true)
+        .sort((a, b) => b.fechaPublicacion.localeCompare(a.fechaPublicacion)),
     [],
   );
   const total = ordenadas.length;
@@ -90,7 +88,7 @@ function Portada() {
           </section>
         </aside>
       </div>
-       <ModalNoticia
+      <ModalNoticia
         noticia={noticiaSeleccionada}
         onCerrar={() => setNoticiaSeleccionada(null)}
         onGuardar={alternarGuardado}
@@ -98,6 +96,7 @@ function Portada() {
           noticiaSeleccionada ? estaGuardada(noticiaSeleccionada) : false
         }
       />
+      <AvisoGuardado mostrar={aviso.mostrar} mensaje={aviso.mensaje} />
     </main>
   );
 }

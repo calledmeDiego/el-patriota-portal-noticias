@@ -7,11 +7,13 @@ import useGuardados from "../../hooks/useGuardados";
 import { useState } from "react";
 import "./HomePage.css";
 import Portada from "../../components/portada/portada";
+import AvisoGuardado from "../../components/aviso-guardado/avisoGuardado";
 
 function HomePage() {
   const {
     estaGuardada,
-    alternarGuardado
+    alternarGuardado,
+    aviso
   } = useGuardados();
   const [noticiaSeleccionada, setNoticiaSeleccionada] = useState(null);
 
@@ -47,6 +49,7 @@ function HomePage() {
           noticiaSeleccionada ? estaGuardada(noticiaSeleccionada) : false
         }
       />
+      <AvisoGuardado mostrar={aviso.mostrar} mensaje={aviso.mensaje} />
     </main>
   );
 }
