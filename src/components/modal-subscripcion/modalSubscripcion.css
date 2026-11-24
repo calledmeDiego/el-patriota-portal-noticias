@@ -161,25 +161,12 @@
   font-size: 0.76rem;
 }
 
-.subscription-main .border-top {
-  border-color: var(--modal-border) !important;
-}
+
 
 .subscription-main .text-body-secondary {
   color: var(--modal-muted) !important;
 }
 
-.subscription-main .btn-outline-primary {
-  border-color: var(--modal-accent);
-  color: var(--modal-accent);
-  font-size: 0.85rem;
-  font-weight: 500;
-}
-
-.subscription-main .btn-outline-primary:hover {
-  background: var(--modal-accent);
-  color: #fff;
-}
 
 /* =========================================
    COLUMNA SECUNDARIA
@@ -190,10 +177,6 @@
   border: 1px solid var(--modal-border) !important;
   border-radius: 14px;
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.045);
-}
-
-.subscription-example .card-body {
-  padding: 22px;
 }
 
 .subscription-example h5 {
@@ -222,23 +205,6 @@
   color: var(--verified-color) !important;
 }
 
-.subscription-benefits {
-  padding: 0 4px;
-}
-
-.subscription-benefits h6 {
-  color: var(--modal-text);
-  font-size: 0.87rem;
-}
-
-.subscription-benefits p {
-  color: var(--modal-muted);
-  font-size: 0.78rem;
-}
-
-.subscription-benefits i {
-  color: var(--modal-accent) !important;
-}
 
 /* =========================================
    992px - 1199px
@@ -278,15 +244,6 @@
     height: 43px;
   }
 
-  .subscription-main .border-top {
-    margin-top: 16px !important;
-    padding-top: 12px !important;
-  }
-
-  .subscription-example .card-body {
-    padding: 15px;
-  }
-
   .subscription-example h5 {
     font-size: 0.95rem;
     margin-bottom: 8px;
@@ -300,18 +257,6 @@
   .subscription-example .border.rounded-3 {
     padding: 10px !important;
     margin-bottom: 9px !important;
-  }
-
-  .subscription-benefits {
-    margin-top: 16px !important;
-  }
-
-  .subscription-benefits > div {
-    margin-bottom: 10px !important;
-  }
-
-  .subscription-benefits i {
-    font-size: 1.25rem !important;
   }
 }
 
@@ -353,10 +298,6 @@
   .subscription-main .lead {
     font-size: 0.95rem;
     margin-bottom: 20px;
-  }
-
-  .subscription-main .border-top {
-    margin-top: 20px !important;
   }
 }
 
@@ -451,21 +392,6 @@
   .subscription-main .form-text {
     font-size: 0.7rem;
     margin-top: 8px;
-  }
-
-  .subscription-main .border-top {
-    margin-top: 18px !important;
-    padding-top: 14px !important;
-  }
-
-  .subscription-main .border-top p {
-    font-size: 0.78rem;
-  }
-
-  .subscription-main .btn-outline-primary {
-    width: 100%;
-    padding: 9px 10px;
-    font-size: 0.78rem;
   }
 }
 

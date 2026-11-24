@@ -13,7 +13,7 @@ function Footer({ theme }) {
           <div className="col-12 col-md-5 col-lg-6">
 
             <h2 className="footer-brand">
-              EL PATRIOTA<span>.</span>
+              EL<span>·</span>PATRIOTA
             </h2>
 
             <p className="footer-description">

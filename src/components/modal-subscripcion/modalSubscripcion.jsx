@@ -237,20 +237,6 @@ function ModalSubscripcion({
 
                       </form>
 
-                      <div className="border-top pt-3 mt-4">
-                        <p className="text-body-secondary mb-2">
-                          ¿Quieres una experiencia más personalizada?
-                        </p>
-
-                        <button
-                          type="button"
-                          className="btn btn-outline-primary"
-                          onClick={onCreateAccount}
-                        >
-                          <i className="bi bi-person-plus me-2"></i>
-                          Crear cuenta gratuita
-                        </button>
-                      </div>
 
                     </div>
 
@@ -323,43 +309,7 @@ function ModalSubscripcion({
                       </div>
 
                       {/* Beneficios */}
-                      <div className="mt-4 subscription-benefits">
-                        <div className="d-flex gap-3 mb-3">
-                          <i className="bi bi-bookmark-check fs-4 text-primary"></i>
-                          <div>
-                            <h6 className="fw-bold text-body mb-1">
-                              Guarda tus noticias
-                            </h6>
-                            <p className="small text-body-secondary mb-0">
-                              Conserva los artículos que te interesan.
-                            </p>
-                          </div>
-                        </div>
-
-                        <div className="d-flex gap-3 mb-3">
-                          <i className="bi bi-sliders fs-4 text-primary"></i>
-                          <div>
-                            <h6 className="fw-bold text-body mb-1">
-                              Personaliza tu feed
-                            </h6>
-                            <p className="small text-body-secondary mb-0">
-                              Elige tus temas de interés.
-                            </p>
-                          </div>
-                        </div>
-
-                        <div className="d-flex gap-3">
-                          <i className="bi bi-bell fs-4 text-primary"></i>
-                          <div>
-                            <h6 className="fw-bold text-body mb-1">
-                              Recibe alertas relevantes
-                            </h6>
-                            <p className="small text-body-secondary mb-0">
-                              Mantente al tanto de lo importante.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
+                     
 
                     </div>
                   </div>
