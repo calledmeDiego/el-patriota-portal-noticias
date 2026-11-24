@@ -5,7 +5,7 @@ import Footer from "./components/footer/footer";
 import HomePage from "./pages/homepage/homepage";
 import "./App.css";
 
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import SearchPage from "./pages/searchpage/searchpage";
 import Navegacion from "./components/navegacion/navegacion";
 import RegisterPage from "./pages/registerpage/registerpage";
@@ -30,6 +30,8 @@ function App() {
           <Route path="/guardados" element={<GuardadosPage />} />
           <Route path="/dashboard" element={<DashboardPage />} />
           <Route path="/registrar" element={<RegisterPage />} />
+
+          <Route path="*" element={<Navigate to="/inicio" replace />} />
         </Routes>
       </div>
       <Footer theme={theme} />
