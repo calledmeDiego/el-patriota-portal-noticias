@@ -1,4 +1,3 @@
-
 import "./notaPortada.css";
 
 function NotaPortada({
@@ -6,39 +5,37 @@ function NotaPortada({
   principal = false,
   onSeleccionar,
   onGuardar,
-  guardada = false
+  guardada = false,
 }) {
   const {
     titulo,
-    fecha,
-    source,
+    fechaPublicacion,
+    fuente,
     descripcion,
     imagen,
     url,
-    fichaVerificacion
+    verificado,
   } = noticia;
 
   return (
-    <article className={`nota-portada
-    ${principal ? 'nota-portada--principal' : 'nota-portada--secundaria'}
-  `}>
+    <article
+      className={`nota-portada
+    ${principal ? "nota-portada--principal" : "nota-portada--secundaria"}
+  `}
+    >
       <div className="nota-portada__contenido">
-
         <div className="nota-portada__encabezado">
-          <span className="nota-portada__fuente">
-            {source}
-          </span>
+          <span className="nota-portada__fuente">{fuente}</span>
 
-          
-            <a
-              href={fichaVerificacion}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="nota-portada__verificacion"
-            >
-              <i className="bi bi-patch-check-fill me-1"></i>
-              Ficha de verificación
-            </a>
+          <a
+            href={verificado}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="nota-portada__verificacion"
+          >
+            <i className="bi bi-patch-check-fill me-1"></i>
+            Ficha de verificación
+          </a>
         </div>
 
         <div className="nota-portada__titulo">
@@ -55,18 +52,20 @@ function NotaPortada({
           )}
         </div>
 
-        <time className="nota-portada__fecha" dateTime={fecha}>
-          {fecha}
+        <time className="nota-portada__fecha" dateTime={fechaPublicacion}>
+          {new Date(fechaPublicacion)
+            .toLocaleDateString("es-PE", {
+              day: "2-digit",
+              month: "short",
+              year: "numeric",
+              timeZone: "UTC",
+            })
+            .replace(",", ".")}
         </time>
 
         {principal && imagen && (
           <figure className="nota-portada__figura">
-            <img
-              className="nota-portada__imagen"
-              src={imagen.src}
-              srcSet={imagen.srcSet}
-              alt={imagen.alt}
-            />
+            <img className="nota-portada__imagen" src={imagen} alt={titulo} />
 
             {imagen.pie && (
               <figcaption className="nota-portada__pie">
@@ -77,9 +76,7 @@ function NotaPortada({
         )}
 
         {descripcion && (
-          <p className="nota-portada__descripcion">
-            {descripcion}
-          </p>
+          <p className="nota-portada__descripcion">{descripcion}</p>
         )}
 
         <div className="nota-portada__acciones">
@@ -101,8 +98,10 @@ function NotaPortada({
             onClick={() => onGuardar?.(noticia)}
             aria-pressed={guardada}
           >
-            <i className={`bi ${guardada ? 'bi-bookmark-fill' : 'bi-bookmark'} me-1`}></i>
-            {guardada ? 'Guardada' : 'Guardar'}
+            <i
+              className={`bi ${guardada ? "bi-bookmark-fill" : "bi-bookmark"} me-1`}
+            ></i>
+            {guardada ? "Guardada" : "Guardar"}
           </button>
 
           {url && (
@@ -117,7 +116,6 @@ function NotaPortada({
             </a>
           )}
         </div>
-
       </div>
     </article>
   );
